@@ -102,7 +102,7 @@ const Login = () => {
             </Form.Group>
             <button
               className='btn btn-outline-primary d-block mx-auto'
-onClick={handletoast}
+
               type="submit"
             >send reset mail</button>
           </Form>
