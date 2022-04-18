@@ -8,8 +8,8 @@ import "./LogReg.css"
 const Registration = () => {
   const navigate = useNavigate()
   const [agree, setAgree] = useState(false)
-  const [user, loading, error] = useAuthState(auth);
-  const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
+  const [user, loading] = useAuthState(auth);
+  const [createUserWithEmailAndPassword, a, b, error] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const emailRef = useRef("")
   const passwordRef = useRef("")
   const nameRef = useRef("")
@@ -18,8 +18,6 @@ const Registration = () => {
     const email = emailRef.current.value
     const password = passwordRef.current.value
     createUserWithEmailAndPassword(email, password)
-
-
   }
   useEffect(() => {
     if (user) {
@@ -27,12 +25,11 @@ const Registration = () => {
     }
   }, [user])
 
-  if (error) {
-    console.log(error.error);
-    console.log("i am from error condition");
-  }
- 
-  console.log(agree);
+  // if (error) {
+  //   console.log(error?.message);
+  //   console.log("i am from error condition");
+  // }
+  console.log(error)
   return (
     <div className='responsiveWidth mx-auto mt-5 border p-4 rounded'>
       <h2 style={{ color: "#00004d", textAlign: "center" }}>Register</h2>
@@ -55,13 +52,13 @@ const Registration = () => {
           <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check onClick={()=>setAgree(!agree)} className={agree?"":"text-danger"} type="checkbox" label="Agree terms and condition" />
+          <Form.Check onClick={() => setAgree(!agree)} className={agree ? "" : "text-danger"} type="checkbox" label="Agree terms and condition" />
         </Form.Group>
-
-        <Button 
-        type="submit" 
-        style={{ backgroundColor: "#00004d" }}
-        disabled={agree?false:true}
+        <p className='text-danger'>{error?.message}</p>
+        <Button
+          type="submit"
+          style={{ backgroundColor: "#00004d" }}
+          disabled={agree ? false : true}
         >
           Register
         </Button>
