@@ -68,9 +68,7 @@ const Login = () => {
               <Form.Label>Password</Form.Label>
               <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
+            
             <p className='text-danger'>{errorInLogin?.message}</p>
             <Button type="submit" style={{ backgroundColor: "#00004d" }}>
               Login
