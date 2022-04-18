@@ -6,6 +6,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init'
 import SocialLogin from './SocialLogin';
 import "./LogReg.css"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   const navigate = useNavigate()
   const emailRef = useRef()
@@ -48,7 +50,8 @@ const Login = () => {
   }
   
   // Toast is here 
-  
+  const notify = () => toast("Wow so easy!");
+const handletoast=()=>notify
   return (
     <div className=' responsiveWidth mx-auto mt-5 border p-4 rounded'>
       {
@@ -99,7 +102,7 @@ const Login = () => {
             </Form.Group>
             <button
               className='btn btn-outline-primary d-block mx-auto'
-
+onClick={handletoast}
               type="submit"
             >send reset mail</button>
           </Form>
