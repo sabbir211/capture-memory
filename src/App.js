@@ -12,6 +12,7 @@ import Login from './Pages/Login/Login';
 import Registration from './Pages/Login/Registration';
 import RequireAuth from './Pages/Shared/RequireAuth/RequireAuth';
 import Checkout from './Pages/Checkout/Checkout';
+import NotFound from './Pages/Shared/NotFound';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
         }></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/blogs" element={<Blogs />}></Route>
-
+<Route path="*" element={<NotFound/>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
