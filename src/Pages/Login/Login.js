@@ -31,9 +31,10 @@ const Login = () => {
     }
   },[user1])
     if(loading){
-      <Spinner animation="border" role="status">
+ return <Spinner className='d-block mx-auto' animation="border" role="status">
   <span className="visually-hidden">Loading...</span>
 </Spinner>
+
     }
 
   if (error) {
