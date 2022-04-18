@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { CardGroup } from 'react-bootstrap';
+import useServices from '../../Hooks/useServices';
 import Service from './Service';
 
 const Services = () => {
-   const [services,setServices]=useState([])
-   useEffect(()=>{
-       fetch("serviceData.json")
-       .then(res=>res.json())
-       .then(data=>setServices(data))
-   },[])
-   console.log(services);
+  const [services,setServices]=useServices()
     return (
         <div>
             <div className='text-center'>

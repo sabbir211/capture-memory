@@ -1,8 +1,14 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Service = ({ service }) => {
-    const { text, img, title,price } = service
+  
+    const { text, img, title,price,id } = service
+    const navigate=useNavigate()
+    const handleCheckout=()=>{
+    navigate(`/checkout/${id}`)
+    }
     return (
         <div className='p-4'>
 <Card>
@@ -15,18 +21,10 @@ const Service = ({ service }) => {
      
       <h5>Starting price:{price} $</h5>
     </Card.Body>
-    <button className='btn' style={{ backgroundColor: "#00004d", color: "white" }}>See details</button>
+    
+    <button onClick={handleCheckout} className='btn w-100' style={{ backgroundColor: "#00004d", color: "white" }}>Check out</button>
+    
   </Card>
-            {/* <div className='col border p-4'>
-                <img className='w-100' src={img} alt="" />
-                <div className="text-center mt-2">
-                     <h2>{title}</h2>
-                <p><small>{text}</small></p>
-                     <h5>Starting price:{price} $</h5>
-                <button className='btn' style={{ backgroundColor: "#00004d", color: "white" }}>See details</button>
-                </div>
-               
-            </div> */}
         </div>
 
     );

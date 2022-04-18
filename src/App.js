@@ -10,21 +10,27 @@ import About from './Pages/About/About';
 import Blogs from './Pages/Blogs/Blogs';
 import Login from './Pages/Login/Login';
 import Registration from './Pages/Login/Registration';
+import RequireAuth from './Pages/Shared/RequireAuth/RequireAuth';
+import Checkout from './Pages/Checkout/Checkout';
 
 function App() {
   return (
     <div>
       <NavigationBar></NavigationBar>
-     <Routes>
-       <Route path="/" element={<Home/>}></Route>
-       <Route path="/home" element={<Home/>}></Route>
-       <Route path="/login" element={<Login/>}></Route>
-       <Route path="/registration" element={<Registration/>}></Route>
-      
-       <Route path="/about" element={<About/>}></Route>
-       <Route path="/blogs" element={<Blogs/>}></Route>
-       
-     </Routes>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/home" element={<Home />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/registration" element={<Registration />}></Route>
+        <Route path="/checkout/:serviceId" element={
+          <RequireAuth>
+            <Checkout></Checkout>
+          </RequireAuth>
+        }></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/blogs" element={<Blogs />}></Route>
+
+      </Routes>
       <Footer></Footer>
     </div>
   );

@@ -1,0 +1,18 @@
+@media screen and (max-width:575px) {
+    .responsiveWidth{
+        width: 100%;
+    }
+    
+}
+@media screen and (max-width:767px) {
+    .responsiveWidth{
+        width: 100%;
+        
+    }
+}
+@media screen and (min-width:768px) {
+    .responsiveWidth{
+        width: 25%;
+        
+    }
+}
