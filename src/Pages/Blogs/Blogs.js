@@ -9,7 +9,7 @@ const Blogs = () => {
             </div>
             <div>
                 <h4>2.Why i use firebase & What other options do i have, to implement authentication</h4>
-                <article>I use <code>Firebase </code> for authentication process.To me it is more secure and easy to use than any other OAuth.Anyone can easily include firebase to there application and it will make their online work way easier than it was used to be.we  can also use ,<code>Auth0</code>,<code> Parse</code>,<code>Kinvey</code>,<code>gamesparks</code>,<code>Back4app</code>,<code>Flutter</code>  </article>
+                <article>I use <code>Firebase </code> for authentication process.To me it is more secure and easy to use than any other OAuth.Anyone can easily include firebase to there application and it will make their online work way easier than it was used to be.we  can also use ,<code>Auth0</code>,<code> Parse</code>,<code> Kinvey</code>,<code> gamesparks</code>,<code> Back4app</code>,<code>Flutter</code>  </article>
 
             </div>
             <div>
