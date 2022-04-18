@@ -50,8 +50,8 @@ const Login = () => {
   }
   
   // Toast is here 
-  const notify = () => toast("Wow so easy!");
-const handletoast=()=>notify
+//   const notify = () => toast("Wow so easy!");
+// const handletoast=()=>notify
   return (
     <div className=' responsiveWidth mx-auto mt-5 border p-4 rounded'>
       {
@@ -91,7 +91,7 @@ const handletoast=()=>notify
             e.preventDefault()
             const email = resetEmailRef.current.value
             await sendPasswordResetEmail(email);
-           
+           toast("Email sent")
           }}>
             <Form.Group className="mb-3" controlId="formBasicEmail ">
               <Form.Label>Email address</Form.Label>
